@@ -133,8 +133,9 @@ body, html {
   display: inline-block;
   height: 200px;
   width: 500px;
-  background-color: rbg(211, 211, 211)
+  background-color: rbga(0,0,0,0.5);
   font-color:orange;
+  padding:10px;
 }
 
 .team_cards_strike_rate {
@@ -178,7 +179,7 @@ td,th{
 }
 
 
-button{
+.button{
   background-color: rgba(255,255,255,0.5);
   border: 1px solid black;
   border-radius: 5px;
@@ -188,14 +189,68 @@ button{
   padding-bottom: 7px;
   color:black;
   font-weight: bold;
-  
+  text-decoration: none;
+
 }
 
 
 
-button:hover{
+.button:hover{
   background-color: rgba(0, 102, 255,0.5);
   color:white;
   cursor: pointer;
   box-shadow: 3px 3px 20px white;
 }
+
+
+#prediction_content_para:first-letter{
+  font-size: 300%;
+  line-height: 0px;
+  initial-letter:2;
+}
+
+.batting_prediction{
+  background-color: rgba(0,0,0,0.8);
+  padding: 30px;
+  margin: 50px;
+  border-radius: 40px;
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
